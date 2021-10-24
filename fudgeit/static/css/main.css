@@ -1,0 +1,38 @@
+.home-container {
+    box-shadow: -1px 6px 13px 0px rgba(0,0,0,0.44);
+    padding: 60px 50px;
+    background-color: white;
+}
+
+.back {
+    background: linear-gradient(to bottom right, #795D43 0%, #795D43 50%, #fff 50%, #fff 100%);
+}
+
+.form-check {
+    padding-left: 0 !important;
+}
+
+.question-group {
+    margin-bottom: 20px;
+}
+
+.question-container {
+    max-width: 700px !important;
+    box-shadow: -1px 6px 13px 0px rgba(0,0,0,0.44);
+}
+
+.recommendation-container {
+    padding: 20px;
+}
+
+.tags {
+    font-size: x-small;
+    border-radius: 5px;
+    border: 1px solid brown;
+    padding: 3px;
+    color: brown;
+}
+
+.card-title {
+    font-size: large;
+}
