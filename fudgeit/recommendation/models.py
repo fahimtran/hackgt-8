@@ -25,6 +25,7 @@ class FoodItem(models.Model):
     image = models.ImageField('image', upload_to='food-items')
     name = models.CharField('name', max_length=50)
     description = models.CharField('description', max_length=200)
+    price = models.DecimalField('price', max_digits=6, decimal_places=2)
     food_class = models.CharField('food class', max_length=1, choices=FOOD_CLASS_CHOICES, default='5')
     restaurant = models.ForeignKey('restaurant', Restaurant)
 

@@ -3,9 +3,10 @@
 {% load static %}
     <head>
         <meta charset="UTF-8">
-        <title>Questionnaire</title>
+        <title>Questionnaire | Fudge-it</title>
         <link rel="stylesheet" href="{% static "/css/main.css" %}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/jpg" href="{% static "/resources/favicon.ico" %}"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -22,8 +23,7 @@
         <main>
             <div class="jumbotron back">
                 <div class="card question-container container-sm">
-                    <form>
-{#                        {% csrf_token %}#}
+                    <form action="../recommendations" method="get">
                         <div class="card-body">
                             <h4><b>Questionnaire</b></h4>
                             <hr>
@@ -37,40 +37,40 @@
                                     <label for="min"><b>Price Tier</b>
                                         <i class="fa fa-question"
                                            title="AOV = Average Order Value
-1 - $0-$9.99 AOV
-2 - $10-$19.99 AOV
-3 - $20-$29.99 AOV
-4 - $30-$39.99 AOV
-5 - $40+ AOV">
+                                            1 - $0-$9.99 AOV
+                                            2 - $10-$19.99 AOV
+                                            3 - $20-$29.99 AOV
+                                            4 - $30-$39.99 AOV
+                                            5 - $40+ AOV">
                                         </i>
                                     </label>
-                                    <input type="range" name="min" id="min" min="0" max="5" value="0">
-                                    <label for="max">Price Tier <i class="fa fa-question"></i></label>
-                                    <input type="range" name="max" id="max" min="0" max="5" value="5">
+                                    <input type="range" name="min" id="min" min="1" max="5" value="1">
+                                    <label for="max">Price Tier<i class="fa fa-question"></i></label>
+                                    <input type="range" name="max" id="max" min="1" max="5" value="5">
                                 </div>
                             </div>
 
                             <div class="question-group">
-                                <label class="control-label"><b>Food Categories</b></label>
+                                <label class="control-label"><b>Preferred Food Category</b></label>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="sides">
-                                    <label class="form-check-label" for="sides">Sides</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="entrees">
+                                    <input class="form-check-input" type="radio" name="foodClass" value="1" id="entrees">
                                     <label class="form-check-label" for="entrees">Entrees</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="dessert">
-                                    <label class="form-check-label" for="dessert">Desserts</label>
+                                    <input class="form-check-input" type="radio" name="foodClass" value="2" id="sides">
+                                    <label class="form-check-label" for="sides">Sides</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="drinks">
+                                    <input class="form-check-input" type="radio" name="foodClass" value="3" id="drinks">
                                     <label class="form-check-label" for="drinks">Drinks</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="misc">
-                                    <label class="form-check-label" for="misc">Misc</label>
+                                    <input class="form-check-input" type="radio" name="foodClass" value="4" id="dessert">
+                                    <label class="form-check-label" for="dessert">Desserts</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="foodClass" value="5" id="misc">
+                                    <label class="form-check-label" for="misc">Misc.</label>
                                 </div>
                             </div>
                             <hr>

@@ -2,42 +2,44 @@
 <html lang="en" class="dark">
     {% load static %}
     <head>
-        <title>Recommendations</title>
+        <title>Recommendations | Fudge-it</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="{% static "/css/main.css" %}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="UTF-8">
+        <link rel="shortcut icon" type="image/jpg" href="{% static "/resources/favicon.ico" %}"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
+    <body>
         <header>
             {% include 'navbar.html' %}
         </header>
-    <body>
         <main>
             <div class="jumbotron back">
                 <div class="card container-sm recommendation-container">
-                    <h3>Recommendations</h3>
+                    <h3>Your Recommendations</h3>
                     <hr>
                     <div class="d-flex align-content-stretch flex-wrap justify-content-center cards-container">
-{#                    {% for restuarant in restaurants %}#}
+                    {% for restaurant in recommendations %}
                     <div class="card col-12 col-sm-6 col-md-4 col-lg-3" style="width: 20rem;">
-                            <img class="card-img-top" src="..." alt="Card image cap">
+                            <img class="card-img-top" src="/media/{{ restaurant.image }}" alt="Restaurant Image">
                             <div class="card-body">
-                                <span class="card-title"><b>Restaurant name</b></span>
-                                <span class="tags">Category</span>
+                                <span class="card-title"><b>{{ restaurant.name }}</b></span>
+                                <span class="tags">Categories</span>
                                 <hr>
-                                <span class="card-text">4.7</span>
-                                <span class="card-text">$$$$$</span>
+                                <span class="card-text">{{ restaurant.user_rating }} stars</span>
+                                <span class="card-text">{{ restaurant.price_rating }}</span>
+                                <span class="card-text">{{ menu.restaurant.id }}</span>
                                 <br><br>
                                 <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#restaurantModal">Order</a>
                             </div>
                         {% include 'restaurant_menu.html' %}
                         </div>
-{#                      {% endfor %}#}
+                      {% endfor %}
                     </div>
                 </div>
             </div>
