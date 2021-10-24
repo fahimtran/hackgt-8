@@ -14,3 +14,4 @@ def questionnaire(request):
 def recommendations(request):
     return render(request, '../templates/recommendations.html')
 
+
