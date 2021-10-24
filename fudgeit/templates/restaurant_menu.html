@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
 </head>
 <body>
-<div class="modal fade" id="restaurantModal" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="restaurantModal{{ restaurant.id }}" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header modal-color">
@@ -15,29 +15,28 @@
                     </button>
                 </div>
                 <div class="modal-body">
-{#                    {% for food_item in food_items %}#}
-{#                        {% if food_item.restaurant == restaurant %}#}
-{#                            <div>#}
-{#                                <img class="card-img-left" src="/media/{{ food_item.image }}" alt="Food Image">#}
-{#                            </div>#}
-{#                        {% endif %}#}
-{#                    {% endfor %}#}
+                {% for food in food_items %}
+                    {% if food.restaurant == restaurant %}
                     <div class="card">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col">
-                                    <img src="/media/{{ restaurant.image }}" alt="Restaurant Image">
+                                    <img src="/media/{{ food.image }}" width="300px" height="300px" alt="Restaurant Image">
                                 </div>
                                 <div class="col">
-                                    <h5 class="card-title">Special title treatment</h5>
-                                    <p class="card-text">Prin</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    <h5 class="card-title">{{ food.name }}</h5>
+                                    <p class="card-text">{{ food.price }}</p>
+                                    <a href="#" class="btn btn-primary">Add to Order</a>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    {% endif %}
+                {% endfor %}
                 </div>
                 <div class="modal-footer">
+                    <span style="color: #D3D3D3">Powered by NCR</span>
+                    <a href="/confirmation" class="btn btn-success">Submit Order</a>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>

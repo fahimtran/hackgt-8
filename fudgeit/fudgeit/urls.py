@@ -24,5 +24,6 @@ urlpatterns = [
     path('', views.home),
     path('questionnaire/', views.questionnaire),
     path('recommendations/', views.recommendations),
+    path('confirmation/', views.confirmation)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

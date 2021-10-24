@@ -31,11 +31,11 @@
                                 <span class="card-title"><b>{{ restaurant.name }}</b></span>
                                 <span class="tags">Categories</span>
                                 <hr>
-                                <span class="card-text">{{ restaurant.user_rating }} stars</span>
-                                <span class="card-text">{{ restaurant.price_rating }}</span>
+                                <span class="card-text">{{ restaurant.user_rating }} stars | </span>
+                                <span class="card-text">{{ restaurant.price_rating }} dollar signs</span>
                                 <span class="card-text">{{ menu.restaurant.id }}</span>
                                 <br><br>
-                                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#restaurantModal">Order</a>
+                                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#restaurantModal{{ restaurant.id }}">Order</a>
                             </div>
                         {% include 'restaurant_menu.html' %}
                         </div>

@@ -41,5 +41,5 @@ def recommendations(request):
 
 
 def confirmation(request):
-    pass
+    return render(request, '../templates/confirmation.html')
 
